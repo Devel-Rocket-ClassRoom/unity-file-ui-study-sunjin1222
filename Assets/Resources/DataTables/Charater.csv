@@ -1,5 +1,5 @@
 ﻿CId,CName,CDesc,CAttack,CDfance,CIcon
-Charactor1,Char1Name,Char1Desc,At11,de11,Icon_Helmet02
-Charactor2,Char2Name,Char2Desc,At12,de12,Icon_Gold
-Charactor3,Char3Name,Char3Desc,At13,de13,Skill1
-Charactor4,Char4Name,Char4Desc,At14,de14,Icon_Trophy_l
+Charactor1,Char1Name,Char1Desc,At11,de11,Skill2
+Charactor2,Char2Name,Char2Desc,At12,de12,Icon_Fire01
+Charactor3,Char3Name,Char3Desc,At13,de13,Icon_Sword04
+Charactor4,Char4Name,Char4Desc,At14,de14,Icon_Bell

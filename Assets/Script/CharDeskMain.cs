@@ -8,6 +8,8 @@ public class CharDeskMain : MonoBehaviour
     public Image image;
     public TextMeshProUGUI Name;
     public TextMeshProUGUI Desc;
+    public TextMeshProUGUI AT;
+    public TextMeshProUGUI DF;
 
 
     private void Start()
@@ -15,6 +17,9 @@ public class CharDeskMain : MonoBehaviour
         image.sprite = null;
         Name.text = null;
         Desc.text = null;
+        AT.text = null;
+        DF.text = null;
+
     }
 
   
@@ -25,6 +30,8 @@ public class CharDeskMain : MonoBehaviour
         image.sprite = charater.SpriteIconCh;
         Name.text = charater.StringNameCh;
         Desc.text = charater.StringDescCh;
+        AT.text = charater.StringATCh;
+        DF.text = charater.StringDfCh;
     }
 
     private void OnEnable()

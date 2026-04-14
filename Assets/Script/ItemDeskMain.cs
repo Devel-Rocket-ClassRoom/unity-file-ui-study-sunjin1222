@@ -14,6 +14,7 @@ public class ItemDeskMain : MonoBehaviour
         image.sprite = null;
         Name.text = null;
         Desc.text= null;
+     
     }
 
     public void OnChangedId(string id)

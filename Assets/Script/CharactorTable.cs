@@ -16,6 +16,9 @@ public class CharacterData
     public string StringNameCh => DataTableManager.StringTable.Get(CName);
     public string StringDescCh => DataTableManager.StringTable.Get(CDesc);
 
+    public string StringATCh => DataTableManager.StringTable.Get(CAttack);
+    public string StringDfCh => DataTableManager.StringTable.Get(CDfance);
+
     public Sprite SpriteIconCh => Resources.Load<Sprite>($"Icon/{CIcon}");
 
     public override string ToString()
