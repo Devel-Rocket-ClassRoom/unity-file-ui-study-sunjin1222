@@ -1,0 +1,28 @@
+﻿Id,String
+HELLO,Hello~
+BYE,Bye~
+YOU DIE,You Die...
+Item1Name,Sword
+Item2Name,Shield
+Item3Name,Bow
+Item4Name,Potion
+Item1Desc,This is a sword.
+Item2Desc,This is a shield.
+Item3Desc,This is a bow.
+Item4Desc,This is a potion.
+Char1Name,라마영어지롱
+Char2Name,라다영어지롱
+Char3Name,라자영어지롱
+Char4Name,라버영어지롱
+Char1Desc,호랑이영어지롱
+Char2Desc,호랑아영어지롱
+Char3Desc,호랑너영어지롱
+Char4Desc,호랑저영어지롱
+At11,17영어지롱
+At12,29영어지롱
+At13,193영어지롱
+At14,179영어지롱
+de11,28영어지롱
+de12,245영어지롱
+de13,22영어지롱
+de14,22영어지롱
