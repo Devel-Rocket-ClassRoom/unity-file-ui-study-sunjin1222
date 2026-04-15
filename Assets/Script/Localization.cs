@@ -12,33 +12,7 @@ public class LocalizationText : MonoBehaviour
     public TextMeshProUGUI[] text;
 
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            editorLang=Languages.Korean;
-            for (int i = 0; i < text.Length; i++)
-            {
-                text[i].text = DataTableManager.StringTable.Get(id[i]);
-            }
-        }
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            editorLang = Languages.English;
-            for (int i = 0; i < text.Length; i++)
-            {
-                text[i].text = DataTableManager.StringTable.Get(id[i]);
-            }
-        }
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            editorLang = Languages.Japanese;
-            for (int i = 0; i < text.Length; i++)
-            {
-                text[i].text = DataTableManager.StringTable.Get(id[i]);
-            }
-        }
-    }
+
 
 
 
@@ -77,7 +51,7 @@ public class LocalizationText : MonoBehaviour
 #endif
     }
 
-    private void OnChangedId()
+    public void OnChangedId()
     {
         for (int i = 0; i < text.Length; i++)
         {

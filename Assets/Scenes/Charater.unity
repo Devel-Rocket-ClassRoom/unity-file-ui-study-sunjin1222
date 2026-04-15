@@ -291,7 +291,7 @@ MonoBehaviour:
   - Char2Name
   - Char3Name
   - Char4Name
-  - Char4Name
+  - Char1Name
   - Char1Desc
   - At11
   - de11
@@ -2721,7 +2721,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC774\uC0C1\uD574\uC528"
+  m_text: "\uD53C\uCE74\uCE04"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 55aa32ed9e380e34abc92f2c398a3f97, type: 2}
   m_sharedMaterial: {fileID: -2253834616945413019, guid: 55aa32ed9e380e34abc92f2c398a3f97, type: 2}

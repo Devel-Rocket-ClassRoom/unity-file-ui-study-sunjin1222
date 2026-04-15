@@ -10,8 +10,7 @@ public class CharDeskMain : MonoBehaviour
     public TextMeshProUGUI Desc;
     public TextMeshProUGUI AT;
     public TextMeshProUGUI DF;
-
-
+   
     private void Start()
     {
         image.sprite = null;
@@ -22,7 +21,7 @@ public class CharDeskMain : MonoBehaviour
 
     }
 
-  
+
     public void OnChangedId(string id)
     {
         CharacterData charater = DataTableManager.CharacterTable.Get(id);

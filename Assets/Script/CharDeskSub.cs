@@ -9,7 +9,7 @@ using static UnityEditor.Progress;
 
 public class CharDeskSub : MonoBehaviour
 {
-    public static System.Action<string> OnItem;
+    public static event System.Action<string> OnItem;
     public TextMeshProUGUI Name;
     public Image image;
     public string charI;
