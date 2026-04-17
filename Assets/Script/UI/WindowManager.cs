@@ -16,7 +16,7 @@ public class WindowManager : MonoBehaviour
         }
 
         crreentWindoId=defaultWindowId;
-        //windows[crreentWindoId].Open();
+        windows[crreentWindoId].Open();
     }
 
 
