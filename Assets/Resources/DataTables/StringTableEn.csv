@@ -1,4 +1,5 @@
 ﻿Id,String
+,
 HELLO,Hello~
 BYE,Bye~
 YOU DIE,You Die...
@@ -10,19 +11,11 @@ Item1Desc,This is a sword.
 Item2Desc,This is a shield.
 Item3Desc,This is a bow.
 Item4Desc,This is a potion.
-Char1Name,피카츄영어지롱
-Char2Name,파이리영어지롱
-Char3Name,꼬부기영어지롱
-Char4Name,이상해씨영어지롱
-Char1Desc,돈까스재료영어지롱
-Char2Desc,3.14리영어지롱
-Char3Desc,간은없음영어지롱
-Char4Desc,착한놈나쁜놈영어지롱
-At11,17영어지롱
-At12,29영어지롱
-At13,193영어지롱
-At14,179영어지롱
-de11,28영어지롱
-de12,245영어지롱
-de13,22영어지롱
-de14,22영어지롱
+Name,이름
+DESC,설명
+TYPE,타입
+VALUE,벨류
+COST,코스트
+WEAPON,무기
+EQUIP,장비
+CONSUMABLE,소모품

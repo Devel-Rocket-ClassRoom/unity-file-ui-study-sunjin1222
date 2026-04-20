@@ -1,4 +1,5 @@
 ﻿Id,String
+,
 HELLO,안녕
 BYE,잘가
 YOU DIE,너 죽음
@@ -10,19 +11,11 @@ Item1Desc,이것은 검이다.
 Item2Desc,이것은 방패다.
 Item3Desc,이것은 활이다.
 Item4Desc,이것은 물약이다.
-Char1Name,피카츄
-Char2Name,파이리
-Char3Name,꼬부기
-Char4Name,이상해씨
-Char1Desc,돈까스재료
-Char2Desc,3.14리
-Char3Desc,간은없음
-Char4Desc,착한놈나쁜놈
-At11,17
-At12,29
-At13,193
-At14,179
-de11,28
-de12,245
-de13,22
-de14,22
+Name,이름
+DESC,설명
+TYPE,타입
+VALUE,벨류
+COST,코스트
+WEAPON,무기
+EQUIP,장비
+CONSUMABLE,소모품
