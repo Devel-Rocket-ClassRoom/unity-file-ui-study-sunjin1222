@@ -1,0 +1,5 @@
+Id,Type,Name,Desc,attack,Cost,Icon
+char1,Norma,char1Name,char1Desc,10,500,Icon_Skull01
+char2,Rare,char2Name,char2Desc,20,200,Icon_Skull02
+char3,SuperRare,char3Name,char3Desc,5,1000,Icon_Skull03
+char4,UltraRare,char4Name,char4Desc,50,50,Icon_Helmet02

@@ -28,6 +28,15 @@ public static class SaveLoadManager
     
     public static SaveDataVC Data { get; set; } = new SaveDataVC();
 
+     static SaveLoadManager()
+    {
+        if (!Load())
+        {
+            Data = new SaveDataVC();
+            Debug.LogError("세이브파일 로드실패!");
+        }
+    }
+
     private static string GetSaveFilePath(int slot)
     {
         return GetSaveFilePath(slot, Mode);
@@ -64,14 +73,16 @@ public static class SaveLoadManager
                 Directory.CreateDirectory(SaveDirectory);
             }
             var json = JsonConvert.SerializeObject(Data, settings);
-            string path = GetSaveFilePath(0, mode);
+            string path = GetSaveFilePath(slot, mode);
             switch (mode)
             {
                 case SaveMode.Text:
                     File.WriteAllText(path, json);
+                  
                     break;
                 case SaveMode.Encrypted:
                     File.WriteAllBytes(path, CryptoUtil.Encrypt(json));
+                 
                     break;
             }
             return true;
@@ -95,7 +106,7 @@ public static class SaveLoadManager
             return false;
         }
 
-        string path = GetSaveFilePath(0, mode);
+        string path = GetSaveFilePath(slot, mode);
         if (!File.Exists(path))
         {
             return false;
@@ -118,6 +129,7 @@ public static class SaveLoadManager
             {
                 saveData = saveData.VersionUp();
             }
+     
             Data = saveData as SaveDataVC;
             return true;
         }

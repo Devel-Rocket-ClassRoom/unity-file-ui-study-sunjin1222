@@ -77,7 +77,13 @@ public class SaveDataV3 : SaveDataV2
 public class SaveDataV4 : SaveDataV2
 {
     public List<SaveItemData> ItemList = new List<SaveItemData>();
+    public List<SaveCaraData> charList = new List<SaveCaraData>();
+    public UiInvenSlotList.SortingOptions sorting=UiInvenSlotList.SortingOptions.NameAscending;
+    public UiInvenSlotList.FilteringOptions filtering= UiInvenSlotList.FilteringOptions.Consumable;
 
+
+    public int SortingValue;
+    public int FilteringValue;
     public SaveDataV4()
     {
         Version = 4;

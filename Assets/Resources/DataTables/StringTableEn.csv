@@ -11,11 +11,36 @@ Item1Desc,This is a sword.
 Item2Desc,This is a shield.
 Item3Desc,This is a bow.
 Item4Desc,This is a potion.
-Name,이름
-DESC,설명
-TYPE,타입
-VALUE,벨류
-COST,코스트
-WEAPON,무기
-EQUIP,장비
-CONSUMABLE,소모품
+Name,Name
+DESC,Description
+TYPE,Type
+VALUE,Value
+COST,Cost
+WEAPON,Weapon
+EQUIP,Equipment
+CONSUMABLE,Consumable
+Save,저장2
+Load,불러오기2
+Add,아이템추가2
+Remove,아이템삭제2
+data_o,날찌(오름차)2
+data_n,날찌(내림차)2
+name_o,이름(오름차)2
+name_n,이름(내림차)2
+non1,null
+WEAPON1,Weapon
+EQUIP1,Equipment
+CONSUMABLE1,Consumable
+char1Name,캐릭터1
+char1Desc,캐릭터1 설명
+char2Name,캐릭터2
+char2Desc,캐릭터2 설명
+char3Name,캐릭터3
+char3Desc,캐릭터3 설명
+char4Name,캐릭터4
+char4Desc,캐릭터4 설명
+CHAR_NONE,없음
+CHAR_NORMAL,일반
+CHAR_RARE,레어
+CHAR_SUPERRARE,슈퍼레어
+CHAR_ULTRARARE,울트라레어

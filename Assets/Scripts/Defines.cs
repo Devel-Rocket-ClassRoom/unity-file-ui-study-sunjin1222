@@ -14,6 +14,13 @@ public enum ItemTypes
     Equip,
     Consumable,
 }
+public enum charTypes
+{
+    Norma,
+    Rare,
+    SuperRare,
+    UltraRare,
+}
 
 public static class Variables
 {
@@ -50,5 +57,6 @@ public static class DataTableIds
 
     public static string String => StringTableIds[(int)Variables.Language];
 
-    public static readonly string Item = "ItemTable";
+    public static readonly string item = "itemTable";
+    public static readonly string charrater = "CharTable";
 }

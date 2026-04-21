@@ -234,7 +234,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 426, y: 208}
   m_SizeDelta: {x: 10, y: 10}
   m_Pivot: {x: 0, y: 0}
 --- !u!223 &5106574666884126429
@@ -312,8 +312,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bc0cf729b6eae944aaf3a00ef5266aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIInvenSlot
+  slotIndex: 1
   imageIcon: {fileID: 1083350846858216703}
-  textname: {fileID: 958598054402449146}
+  textName: {fileID: 958598054402449146}
+  button: {fileID: 8325646754500030015}
 --- !u!1 &6260634149122750754
 GameObject:
   m_ObjectHideFlags: 0

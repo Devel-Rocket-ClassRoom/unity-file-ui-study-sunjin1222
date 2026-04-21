@@ -9,7 +9,9 @@ public static class DataTableManager
 
     public static StringTable StringTable => Get<StringTable>(DataTableIds.String);
 
-    public static ItemTable ItemTable => Get<ItemTable>(DataTableIds.Item);
+    public static ItemTable ItemTable => Get<ItemTable>(DataTableIds.item);
+
+    public static CharTable charTable => Get<CharTable>(DataTableIds.charrater);
 
 #if UNITY_EDITOR
     public static StringTable GetStringTable(Languages lang)
@@ -39,8 +41,12 @@ public static class DataTableManager
 #endif
 
         var itemTable = new ItemTable();
-        itemTable.Load(DataTableIds.Item);
-        tables.Add(DataTableIds.Item, itemTable);
+        itemTable.Load(DataTableIds.item);
+        tables.Add(DataTableIds.item, itemTable);
+
+        var charTable = new CharTable();
+        charTable.Load(DataTableIds.charrater);
+        tables.Add(DataTableIds.charrater, charTable);
     }
 
     public static void ChangeLanguage(Languages lang)

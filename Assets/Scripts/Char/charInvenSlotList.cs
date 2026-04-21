@@ -4,7 +4,7 @@ using UnityEngine.Events;
 using UnityEngine.UI;
 using System.Linq;
 
-public class UiInvenSlotList : MonoBehaviour
+public class CharInvenSlotList : MonoBehaviour
 {
     public enum SortingOptions
     {
@@ -17,32 +17,34 @@ public class UiInvenSlotList : MonoBehaviour
     public enum FilteringOptions
     {
         None,
-        Weapon,
-        Equip,
-        Consumable,
+        Normal,
+        Rare,
+        SuperRare,
+        UltraRare,
     }
 
-    public readonly System.Comparison<SaveItemData>[] comparisons =
+    public readonly System.Comparison<SaveCaraData>[] comparisons =
     {
         (lhs, rhs) => lhs.CreationTime.CompareTo(rhs.CreationTime),
         (lhs, rhs) => rhs.CreationTime.CompareTo(lhs.CreationTime),
-        (lhs, rhs) => lhs.ItemData.StringName.CompareTo(rhs.ItemData.StringName),
-        (lhs, rhs) => rhs.ItemData.StringName.CompareTo(lhs.ItemData.StringName),
+        (lhs, rhs) => lhs.charData.StringName.CompareTo(rhs.charData.StringName),
+        (lhs, rhs) => rhs.charData.StringName.CompareTo(lhs.charData.StringName),
     };
 
-    public readonly System.Func<SaveItemData, bool>[] filterings =
+    public readonly System.Func<SaveCaraData, bool>[] filterings =
     {
         x => true,
-        x => x.ItemData.Type == ItemTypes.Weapon,
-        x => x.ItemData.Type == ItemTypes.Equip,
-        x => x.ItemData.Type == ItemTypes.Consumable,
+        x => x.charData.Type == charTypes.Norma,
+        x => x.charData.Type == charTypes.Rare,
+        x => x.charData.Type == charTypes.SuperRare,
+        x => x.charData.Type == charTypes.UltraRare,
     };
 
-    public UiInvenSlot prefab;
+    public charInvenSlot prefab;
     public ScrollRect scrollRect;
 
-    private List<UiInvenSlot> uiSlotList = new List<UiInvenSlot>();
-    private List<SaveItemData> saveItemDataList = new List<SaveItemData>();
+    private List<charInvenSlot> uiSlotList = new List<charInvenSlot>();
+    private List<SaveCaraData> saveCaraDataList = new List<SaveCaraData>();
 
     public SortingOptions sorting = SortingOptions.CreationTimeAscending;
     public FilteringOptions filtering = FilteringOptions.None;
@@ -50,7 +52,7 @@ public class UiInvenSlotList : MonoBehaviour
     private int selectedSlotIndex = -1;
 
     public UnityEvent onUpdateSlots;
-    public UnityEvent<SaveItemData> onSelectSlot;
+    public UnityEvent<SaveCaraData> onSelectSlot;
 
     public SortingOptions Sorting
     {
@@ -78,41 +80,40 @@ public class UiInvenSlotList : MonoBehaviour
         }
     }
 
-
     private void OnEnable()
     {
-        //SetSaveItemDataList(SaveLoadManager.Data.ItemList);
+        // 필요하면 로드한 데이터 연결
+        // SetSaveCaraDataList(SaveLoadManager.Data.CharList);
     }
 
     private void OnDisable()
     {
-        //SaveLoadManager.Data.ItemList = saveItemDataList;
-        //SaveLoadManager.Save();
+        // 필요하면 저장
+        // SaveLoadManager.Data.CharList = saveCaraDataList;
+        // SaveLoadManager.Save();
     }
 
-    public void SetSaveItemDataList(List<SaveItemData> source)
+    public void SetSaveCaraDataList(List<SaveCaraData> source)
     {
-        saveItemDataList = source.ToList();
+        saveCaraDataList = source != null ? source.ToList() : new List<SaveCaraData>();
         UpdateSlots();
     }
 
-
-    public List<SaveItemData> GetSaveItemDatas()
+    public List<SaveCaraData> GetSaveCaraDatas()
     {
-        return saveItemDataList;
+        return saveCaraDataList;
     }
 
     private void UpdateSlots()
     {
-        var list = saveItemDataList.Where(filterings[(int)filtering]).ToList();
-        list.Sort(comparisons[(int)sorting]);
 
+        var list = saveCaraDataList.Where(filterings[(int)filtering]).ToList();
+        list.Sort(comparisons[(int)sorting]);
         if (uiSlotList.Count < list.Count)
         {
             for (int i = uiSlotList.Count; i < list.Count; ++i)
             {
-                var newSlot = Instantiate(prefab, scrollRect.content);
-                var slot = newSlot;
+                var slot = Instantiate(prefab, scrollRect.content);
 
                 slot.SetEmpty();
                 slot.gameObject.SetActive(false);
@@ -120,7 +121,7 @@ public class UiInvenSlotList : MonoBehaviour
                 slot.button.onClick.AddListener(() =>
                 {
                     selectedSlotIndex = slot.slotIndex;
-                    onSelectSlot.Invoke(slot.saveitemdata);
+                    onSelectSlot?.Invoke(slot.saveCaraData);
                 });
 
                 uiSlotList.Add(slot);
@@ -145,22 +146,33 @@ public class UiInvenSlotList : MonoBehaviour
 
         selectedSlotIndex = -1;
         onUpdateSlots?.Invoke();
+
+
+      
     }
 
-    public void AddRandomItem()
+    public void AddRandomChar()
     {
-        saveItemDataList.Add(SaveItemData.GetRandomItem());
+        var data = SaveCaraData.GetRandomItem();
+
+        if (data == null || data.charData == null)
+        {
+            return;
+        }
+
+        saveCaraDataList.Add(data);
         UpdateSlots();
     }
 
     public void Remove()
     {
         if (selectedSlotIndex == -1)
-        {
             return;
+
+        if (selectedSlotIndex >= 0 && selectedSlotIndex < uiSlotList.Count)
+        {
+            saveCaraDataList.Remove(uiSlotList[selectedSlotIndex].saveCaraData);
+            UpdateSlots();
         }
-   
-        saveItemDataList.Remove(uiSlotList[selectedSlotIndex].saveitemdata);
-        UpdateSlots();
     }
 }

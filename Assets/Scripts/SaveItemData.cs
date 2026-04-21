@@ -25,6 +25,11 @@ public class SaveItemData
         CreationTime = DateTime.Now;
     }
 
+    public override string ToString()
+    {
+        return $"{InstanceId}{CreationTime}{ItemData.Id}";
+    }
+
 }
 
 
